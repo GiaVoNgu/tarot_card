@@ -1,0 +1,42 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    text-align: center;
+}
+img{
+    height: 200px;
+    width: 120px;
+    transition: 0.3s;
+}
+
+img:hover{
+    transform: scale(1.4);
+}
+.card{
+    position:absolute;
+    left:50%;
+    transform: translate(-50%);
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+}
+
+
+.middle_card{
+    display: flex;
+    flex-direction: column;
+}
+
+#First_Card {
+    margin-top: 50px;
+}
+#Second_Card{
+    margin-right: 50px;
+}
+#Third_Card{
+    margin-bottom: 50px;
+}
+#Forth_Card{
+    margin-left: 50px;
+}
