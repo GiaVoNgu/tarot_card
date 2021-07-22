@@ -5,35 +5,90 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    
     <title>Document</title>
 </head>
 <body>
-    <h3>Hãy chọn lá bài</h3>
-    <div class="card">
-        <img src="Image/place_holder.JPG" alt="" id="Second_Card" onclick="changeImage(this.id)">
-        <div class="middle_card">
-            <img src="Image/place_holder.JPG" alt="" id="Third_Card" onclick="changeImage(this.id)">
-            <img src="Image/place_holder.JPG" alt="" id="First_Card" onclick="changeImage(this.id)">
-        </div>
-        <img src="Image/place_holder.JPG" alt="" id="Forth_Card" onclick="changeImage(this.id)">
+    <div class="container">
+        <!-- <section class="welcome">
+            <div class="introduction">
+                <h2>Tarot kể chuyện</h2>
+                <p></p>
+            </div>
+            <div class="userInfor">
+                <div>
+                    <p>Tên của bạn</p>
+                    <input type="text" class="name">
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+        </section> -->
+        <section id="draw_card">
+            <h1>
+                Trải bài 4 ngọn gió
+            </h1>
+            <div class="selected_card">
+                <div class="left_card">                   
+                    <img src="Image/place_holder.JPG" id="Second_Card" onclick="changeImage(this.id)">                
+                </div>
+                <div class="middle_card">                   
+                    <img src="Image/place_holder.JPG" id="Third_Card" onclick="changeImage(this.id)">                                   
+                    <img src="Image/place_holder.JPG" id="First_Card" onclick="changeImage(this.id)">                
+                </div>
+                <div class="right_card">                   
+                    <img src="Image/place_holder.JPG" id="Forth_Card" onclick="changeImage(this.id)">                
+                </div>
+                <div class="btnContainer">
+                    <button id="SendBtn">Gửi trải bài</button>
+                </div>
+            </div>
+            <div class="guide_text" id="text_message">
+                <p>Hãy suy nghĩ đến vấn đề của bạn</p>
+                <P>và bốc lá bài đầu tiên đại diện cho gốc rễ của vấn đề</p>
+            </div>
+            <div class="deck_of_cards">
+                
+                <div><img src="Image/Backofcard.jpg" class="card_in_deck"></div> 
+                <div><img src="Image/Backofcard.jpg" class="card_in_deck"></div>
+                <div><img src="Image/Backofcard.jpg" class="card_in_deck"></div>
+                <div><img src="Image/Backofcard.jpg" class="card_in_deck"></div>
+                <div><img src="Image/Backofcard.jpg" class="card_in_deck"></div>
+
+                <div><img src="Image/Backofcard.jpg" class="card_in_deck"></div>
+                <div><img src="Image/Backofcard.jpg" class="card_in_deck"></div>
+                <div><img src="Image/Backofcard.jpg" class="card_in_deck"></div>
+                <div><img src="Image/Backofcard.jpg" class="card_in_deck"></div>
+                <div><img src="Image/Backofcard.jpg" class="card_in_deck"></div>
+
+                <div><img src="Image/Backofcard.jpg" class="card_in_deck"></div>
+                <div><img src="Image/Backofcard.jpg" class="card_in_deck"></div>
+                <div><img src="Image/Backofcard.jpg" class="card_in_deck"></div>
+                <div><img src="Image/Backofcard.jpg" class="card_in_deck"></div>
+                <div><img src="Image/Backofcard.jpg" class="card_in_deck"></div>
+
+                <div><img src="Image/Backofcard.jpg" class="card_in_deck"></div>
+                <div><img src="Image/Backofcard.jpg" class="card_in_deck"></div>
+                <div><img src="Image/Backofcard.jpg" class="card_in_deck"></div>
+                <div><img src="Image/Backofcard.jpg" class="card_in_deck"></div>
+                <div><img src="Image/Backofcard.jpg" class="card_in_deck"></div>
+
+                <div><img src="Image/Backofcard.jpg" class="card_in_deck"></div>
+                <div><img src="Image/Backofcard.jpg" class="card_in_deck"></div>
+                <div><img src="Image/Backofcard.jpg" class="card_in_deck"></div>
+                
+                <script src="script.js"></script>
+            </div>
+        </section>    
     </div>
-    <section class="deck_of_cards">
-        <img src="Image/Backofcard.jpg" alt="" id="1" onclick="hiddenChoosenCard(this.id)">
-        <img src="Image/Backofcard.jpg" alt="" id="2" onclick="hiddenChoosenCard(this.id)">
-        <img src="Image/Backofcard.jpg" alt="" id="3" onclick="hiddenChoosenCard(this.id)">
-        <img src="Image/Backofcard.jpg" alt="" id="4" onclick="hiddenChoosenCard(this.id)">
-        <img src="Image/Backofcard.jpg" alt="" id="5" onclick="hiddenChoosenCard(this.id)">
-        <img src="Image/Backofcard.jpg" alt="" id="6" onclick="hiddenChoosenCard(this.id)">
-        <img src="Image/Backofcard.jpg" alt="" id="7" onclick="hiddenChoosenCard(this.id)">
-        <img src="Image/Backofcard.jpg" alt="" id="9" onclick="hiddenChoosenCard(this.id)">
-        <img src="Image/Backofcard.jpg" alt="" id="10" onclick="hiddenChoosenCard(this.id)">
-        <img src="Image/Backofcard.jpg" alt="" id="11" onclick="hiddenChoosenCard(this.id)">
-        <img src="Image/Backofcard.jpg" alt="" id="12" onclick="hiddenChoosenCard(this.id)">
-        <img src="Image/Backofcard.jpg" alt="" id="13" onclick="hiddenChoosenCard(this.id)">
-        <img src="Image/Backofcard.jpg" alt="" id="14" onclick="hiddenChoosenCard(this.id)">
-        <img src="Image/Backofcard.jpg" alt="" id="15" onclick="hiddenChoosenCard(this.id)">
-        <img src="Image/Backofcard.jpg" alt="" id="16" onclick="hiddenChoosenCard(this.id)">
-    </section>
 </body>
 </html>
