@@ -48,13 +48,14 @@ function isUniqueCard(cardSrc){
     }
 }
 
-function hiddenChoosenCard(element_id){
+function hiddenChoosenCard(element){
     let forthCard = document.getElementById("Forth_Card");
     if (forthCard.src.includes('Image/place_holder.JPG')){
-        var el = document.getElementById(element_id);
-        el.classList.add("choosen_card");
+        // var el = document.getElementById(element_id);
+        element.classList.add("choosen_card");
         placeCard();
     }
+    console.log ('run')
 }
 function placeCard(){
     let firstCard = document.getElementById("First_Card");
@@ -75,3 +76,14 @@ function placeCard(){
     }
     forthCard.src = 'Image/Backofcard.jpg'
 }
+
+document.querySelectorAll('.card_in_deck').forEach(item=> {
+    item.addEventListener('click', ()=>{
+        hiddenChoosenCard(item)})
+})
+
+// document.addEventListener('click',function(e){
+//     if (e.target.classList == "card_in_deck"){
+//         hiddenChoosenCard(e);
+//     }
+// });
