@@ -1,72 +1,123 @@
 *{
     box-sizing: border-box;
+    padding: 0;
+    margin:0;
 }
 body{
-    text-align: center;
     display: flex;
-    flex-direction: column;
+    text-align: center;
     align-items: center;
     justify-content: center;
     background-color: cadetblue;
 }
 
-div img:hover{
-    transform: scale(1.4);
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+    max-width: 1000px;
+    min-width: 375px;
 }
-.card{
-    position: relative;
+#draw_card{
+    
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    height: 50%;
-    left:50%;
-    transform: translate(-50%);
-    margin-top: 50px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.selected_card{
+    padding-top: 20px;
+    margin-top: 10px;
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+.guide_text{
+    width: 100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left: 0;
+    text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+#text_message{
+    width: 50%;
+    height: auto;
+    border-radius: 10%;
+    padding: 10px;
+    background-color: wheat;
+    color: red;
+    ;
+}
+
+.selected_card div img{
+    width: 60%;
+}
+.left_card{
+    width:33%;
     
 }
-
+#Second_Card{
+    
+}
 .middle_card{
+    width:33%;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
-
-#First_Card {
-    margin-top: 50px;
-}
-#Second_Card{
-    margin-right: 50px;
+#First_Card{
+    
+    margin-top: 25%;
 }
 #Third_Card{
-    margin-bottom: 50px;
+    
+    margin-bottom: 25%;
+    
+}
+.right_card{
+    width:33%;
+    
 }
 #Forth_Card{
-    margin-left: 50px;
+    
+
 }
 
 .deck_of_cards{
+    margin-left: -10%;
     margin-top: 75px;
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
+    /* max-height: 150px; */
+    /* width: 100px; */
     justify-content: center;
     display: grid;
-    grid-template-columns: repeat(auto-fit,  minmax(10px, max-content)) ;
+    /* grid-template-columns: repeat(auto-fill,  minmax(10px, max-content)) ; */
+    grid-template-columns: repeat(auto-fit,  calc(100%/23)) ;
 }
-img{
-    width: 8em;
-    height: 13em;
-    padding: 3px;
-    margin: 2px;
-    transition: 0.3s;
+.deck_of_cards > div{
+    width: calc(100% / 23*50);
 }
-section img{
+.deck_of_cards img{
+    /* display: block; */
+    max-width: 100%;
+    width: 100%;
+    transition: 500ms;
     position: relative;
-    overflow: hidden;
 }
-section img:hover{
-    transform: translatey(-30px);
+.deck_of_cards img:hover{
+    transform: translatey(-20%);
 }
+
 .choosen_card{
-    visibility: hidden;
+    display: none;
 }
