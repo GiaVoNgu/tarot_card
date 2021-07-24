@@ -35,7 +35,8 @@ function changeImage(card) {
         }  while (isUniqueCard(newScr)==false)
         selectCard.src  = newScr ;
     }
-    if (forthCard.src.includes('/Image/Backofcard.jpg') == false){
+    if (forthCard.src.includes('/Image/Backofcard.jpg') == false&&
+        forthCard.src.includes('Image/place_holder.JPG')==false){
         textMessage.querySelectorAll('p')[0].innerHTML = 'Trải bài của bạn đã hoàn tất';
         textMessage.querySelectorAll('p')[1].innerHTML = 'Hãy bấm vào nút "Gửi trải bài" để mình đọc bài nhé';
         sendBtn.style.display = "unset";
