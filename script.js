@@ -32,7 +32,9 @@ document.querySelectorAll('.card_in_deck').forEach(item=> {
 
 //trigger senddata
 sendBtn.addEventListener('click',()=>{
-    submitData()
+    submitData();
+    alert('Đã gửi thông tin')
+    sendBtn.disabled = true;
 })
 
 //bốc bài thực 
