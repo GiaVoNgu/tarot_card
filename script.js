@@ -4,7 +4,37 @@ let secondCard = document.getElementById("Second_Card");
 let thirdCard = document.getElementById("Third_Card");
 let forthCard = document.getElementById("Forth_Card");
 let textMessage = document.getElementById("text_message");
-let sendBtn = document.getElementById("SendBtn")
+let sendBtn = document.getElementById("SendBtn");
+let startBtn = document.getElementById('startBtn');
+let name = document.getElementById('name');
+let birthDate = document.getElementById('birthDate');
+let email = document.getElementById('email');
+let question = document.getElementById('question');
+
+//trigger chuyển trang bốc bài
+startBtn.addEventListener('click', () => {
+    if (name.value ==""||
+        birthDate.value==""||
+        email.value==""||
+        question.value==""){
+            alert ('Hãy điền đủ thông tin trước khi bắt đầu trải bài');
+    }else{
+        document.getElementById('welcome').style.display = "none";
+        document.getElementById('draw_card').style.display ="flex"
+    }
+});
+
+//trigger bốc bài
+document.querySelectorAll('.card_in_deck').forEach(item=> {
+    item.addEventListener('click', ()=>{
+        hiddenChoosenCard(item)})
+})
+
+//trigger senddata
+sendBtn.addEventListener('click',()=>{
+    submitData()
+})
+
 //bốc bài thực 
 function changeImage(card) {
     if (card == "Second_Card"){
@@ -91,8 +121,33 @@ function placeCard(){
     textMessage.querySelectorAll('p')[1].innerHTML = 'Và lật các lá bài theo thứ tự đã bốc';
 }
 
-document.querySelectorAll('.card_in_deck').forEach(item=> {
-    item.addEventListener('click', ()=>{
-        hiddenChoosenCard(item)})
-})
+function submitData(){
+    const url = "https://script.google.com/macros/s/AKfycbwmy7ikVpGnM__WjzEt_dBjU2zULLSkN25hBg72Gv51GYOnEMtCXofCLyJFJLzbkKdVYw/exec"
 
+    let data = {
+        name: name.value,
+        age: birthDate.value,
+        email: email.value,
+        question: question.value,
+        firstCard: firstCard.src,
+        secondCard: secondCard.src,
+        thirdCard: thirdCard.src,
+        forthCard: forthCard.src
+    }
+
+    fetch(url, {
+        method: 'POST', // *GET, POST, PUT, DELETE, etc.
+        mode: 'no-cors', // no-cors, *cors, same-origin
+        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+        headers: {
+          'Content-Type': 'application/json'
+          // 'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        redirect: 'follow', // manual, *follow, error
+        body: JSON.stringify(data) // body data type must match "Content-Type" header
+      });
+}
+
+document.getElementById('testbutton').addEventListener('click',()=> {
+    console.log('submit')
+    submitData});
