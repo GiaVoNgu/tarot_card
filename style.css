@@ -230,7 +230,7 @@ h1{
     display: none;
 }
 
-@media only screen and (max-width: 400px){
+@media only screen and (max-width: 480px){
     #welcome{
         flex-direction: column;
         justify-content: center;
