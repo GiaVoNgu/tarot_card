@@ -124,7 +124,7 @@ function placeCard(){
 }
 
 function submitData(){
-    const url = "https://script.google.com/macros/s/AKfycbwmy7ikVpGnM__WjzEt_dBjU2zULLSkN25hBg72Gv51GYOnEMtCXofCLyJFJLzbkKdVYw/exec"
+    const url = "https://script.google.com/macros/s/AKfycbyLzGH3uCEAV9EThXUqefug9MH-KH2rgKSq_y5FeVz16g6sc_aKip7uuaQPdV93bqHOnQ/exec"
 
     let data = {
         name: name.value,
