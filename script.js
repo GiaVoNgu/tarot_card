@@ -124,11 +124,7 @@ function placeCard(){
 }
 
 function submitData(){
-<<<<<<< HEAD
     const url = "https://script.google.com/macros/s/AKfycbwxYXVRkbNGM9oRVLZAtrQJZR8HF_CvWl-flrQLFI0oVgrbK_EL-ZmG6b6Au0uXAc_oVQ/exec"
-=======
-    const url = "https://script.google.com/macros/s/AKfycbyLzGH3uCEAV9EThXUqefug9MH-KH2rgKSq_y5FeVz16g6sc_aKip7uuaQPdV93bqHOnQ/exec"
->>>>>>> b3075d2365baaf7d9d3514c340fb07e787e92312
 
     let firstResponseCard = document.getElementById("first_card_keyword");
     let secondResponseCard = document.getElementById("second_card_keyword");
@@ -169,11 +165,5 @@ function submitData(){
         console.error('Error:', error);
     });
 
-<<<<<<< HEAD
     document.getElementById('finish_message').style.display = 'unset';
 }
-=======
-document.getElementById('testbutton').addEventListener('click',()=> {
-    console.log('submit')
-    submitData});
->>>>>>> b3075d2365baaf7d9d3514c340fb07e787e92312
