@@ -10,7 +10,7 @@ let name = document.getElementById('name');
 let birthDate = document.getElementById('birthDate');
 let email = document.getElementById('email');
 let question = document.getElementById('question');
-
+let finish_message = document.getElementById('finish_message');
 //trigger chuyển trang bốc bài
 startBtn.addEventListener('click', () => {
     if (name.value ==""||
@@ -33,8 +33,8 @@ document.querySelectorAll('.card_in_deck').forEach(item=> {
 //trigger senddata
 sendBtn.addEventListener('click',()=>{
     submitData();
-    alert('Đã gửi thông tin')
-    sendBtn.disabled = true;
+    document.getElementById('draw_card').style.display ="none";
+    finish_message.style.display = "unset"
 })
 
 //bốc bài thực 
@@ -124,8 +124,14 @@ function placeCard(){
 }
 
 function submitData(){
-    const url = "https://script.google.com/macros/s/AKfycbwmy7ikVpGnM__WjzEt_dBjU2zULLSkN25hBg72Gv51GYOnEMtCXofCLyJFJLzbkKdVYw/exec"
+    const url = "https://script.google.com/macros/s/AKfycbwxYXVRkbNGM9oRVLZAtrQJZR8HF_CvWl-flrQLFI0oVgrbK_EL-ZmG6b6Au0uXAc_oVQ/exec"
 
+    let firstResponseCard = document.getElementById("first_card_keyword");
+    let secondResponseCard = document.getElementById("second_card_keyword");
+    let thirdResponseCard = document.getElementById("third_card_keyword");
+    let forthResponseCard = document.getElementById("forth_card_keyword");
+    let idMessage = document.getElementById('id_message');
+    
     let data = {
         name: name.value,
         age: birthDate.value,
@@ -147,9 +153,17 @@ function submitData(){
         },
         redirect: 'follow', // manual, *follow, error
         body: JSON.stringify(data) // body data type must match "Content-Type" header
-      });
-}
+    })
+    .then (response => response.json())
+    .then (data => {
+        firstResponseCard.innerHTML = data.firstCard;
+        secondResponseCard.innerHTML= data.secondCard;
+        thirdResponseCard.innerHTML=  data.thirdCard;
+        forthResponseCard.innerHTML = data.forthCard;
+        idMessage.innerHTML = `Trải bài của bạn có mã số ${data.id}, kết quả trải bài sẽ được đăng tải qua video trên kênh của mình`;
+    }).catch(error => {
+        console.error('Error:', error);
+    });
 
-document.getElementById('testbutton').addEventListener('click',()=> {
-    console.log('submit')
-    submitData});
+    document.getElementById('finish_message').style.display = 'unset';
+}
