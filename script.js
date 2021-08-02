@@ -33,7 +33,7 @@ document.querySelectorAll('.card_in_deck').forEach(item=> {
 //trigger senddata
 sendBtn.addEventListener('click',()=>{
     submitData();
-    document.getElementById('draw_card').style.display ="none";
+//     document.getElementById('draw_card').style.display ="none";
     finish_message.style.display = "unset"
 })
 
@@ -148,8 +148,8 @@ function submitData(){
         //mode: 'no-cors', // no-cors, *cors, same-origin
         //cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
         headers: {
-          //'Content-Type': 'application/json'
-            'Content-Type': 'text/plain;charset=utf-8'
+          'Content-Type': 'application/json'
+//             'Content-Type': 'text/plain;charset=utf-8'
           // 'Content-Type': 'application/x-www-form-urlencoded',
         },
         //redirect: 'follow', // manual, *follow, error
@@ -157,6 +157,7 @@ function submitData(){
     })
     .then (response => response.json())
     .then (data => {
+        console.log (data);
         firstResponseCard.innerHTML = data.firstCard;
         secondResponseCard.innerHTML= data.secondCard;
         thirdResponseCard.innerHTML=  data.thirdCard;
@@ -166,5 +167,4 @@ function submitData(){
         console.error('Error:', error);
     });
 
-    document.getElementById('finish_message').style.display = 'unset';
 }
