@@ -33,7 +33,7 @@ document.querySelectorAll('.card_in_deck').forEach(item=> {
 //trigger senddata
 sendBtn.addEventListener('click',()=>{
     submitData();
-    document.getElementById('draw_card').style.display ="none";
+    // document.getElementById('draw_card').style.display ="none";
     finish_message.style.display = "unset"
 })
 
@@ -124,7 +124,7 @@ function placeCard(){
 }
 
 function submitData(){
-    const url = "https://script.google.com/macros/s/AKfycbwxYXVRkbNGM9oRVLZAtrQJZR8HF_CvWl-flrQLFI0oVgrbK_EL-ZmG6b6Au0uXAc_oVQ/exec"
+    const url = "https://script.google.com/macros/s/AKfycbwdpVl4oAnJu38cKx-MLnMTMOpVIipkKJhgMT6JnoxMrlIrDnYYOMlOAY96XlsOhw7ULA/exec"
 
     let firstResponseCard = document.getElementById("first_card_keyword");
     let secondResponseCard = document.getElementById("second_card_keyword");
@@ -145,17 +145,20 @@ function submitData(){
 
     fetch(url, {
         method: 'POST', // *GET, POST, PUT, DELETE, etc.
-        mode: 'no-cors', // no-cors, *cors, same-origin
-        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+        // mode: 'no-cors', // no-cors, *cors, same-origin
+        // cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
         headers: {
-          'Content-Type': 'application/json'
+        //   'Content-Type': 'application/json'
+          'Content-Type': 'text/plain;charset=utf-8'
+        //   "Content-Type": "application/json; charset=UTF-8"
           // 'Content-Type': 'application/x-www-form-urlencoded',
         },
-        redirect: 'follow', // manual, *follow, error
+        // redirect: 'follow', // manual, *follow, error
         body: JSON.stringify(data) // body data type must match "Content-Type" header
     })
     .then (response => response.json())
     .then (data => {
+        console.log (data);
         firstResponseCard.innerHTML = data.firstCard;
         secondResponseCard.innerHTML= data.secondCard;
         thirdResponseCard.innerHTML=  data.thirdCard;
@@ -165,5 +168,4 @@ function submitData(){
         console.error('Error:', error);
     });
 
-    document.getElementById('finish_message').style.display = 'unset';
 }
