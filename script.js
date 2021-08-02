@@ -33,11 +33,9 @@ document.querySelectorAll('.card_in_deck').forEach(item=> {
 //trigger senddata
 sendBtn.addEventListener('click',()=>{
     submitData();
-<<<<<<< HEAD
-    // document.getElementById('draw_card').style.display ="none";
-=======
-//     document.getElementById('draw_card').style.display ="none";
->>>>>>> a165db1a3821a8f375af63211b639efb41dac7b5
+    document.getElementById('text_message').style.display ="none";
+    document.getElementById('deck_of_cards').style.display ="none";
+    
     finish_message.style.display = "unset"
 })
 
@@ -149,7 +147,6 @@ function submitData(){
 
     fetch(url, {
         method: 'POST', // *GET, POST, PUT, DELETE, etc.
-<<<<<<< HEAD
         // mode: 'no-cors', // no-cors, *cors, same-origin
         // cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
         headers: {
@@ -159,16 +156,6 @@ function submitData(){
           // 'Content-Type': 'application/x-www-form-urlencoded',
         },
         // redirect: 'follow', // manual, *follow, error
-=======
-        //mode: 'no-cors', // no-cors, *cors, same-origin
-        //cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-        headers: {
-//           'Content-Type': 'application/json'
-            'Content-Type': 'text/plain;charset=utf-8'
-          // 'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        //redirect: 'follow', // manual, *follow, error
->>>>>>> a165db1a3821a8f375af63211b639efb41dac7b5
         body: JSON.stringify(data) // body data type must match "Content-Type" header
     })
     .then (response => response.json())

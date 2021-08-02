@@ -206,7 +206,7 @@ h1{
 #text_message p{
     transition: 300ms;
 }
-.deck_of_cards{
+#deck_of_cards{
     margin-left: -5%;
     margin-top: 30px;
     width: 100%;
@@ -214,15 +214,15 @@ h1{
     display: grid;
     grid-template-columns: repeat(auto-fit,  calc(100%/23)) ;
 }
-.deck_of_cards > div{
+#deck_of_cards > div{
     width: calc(100% / 23*50);
 }
-.deck_of_cards img{
+#deck_of_cards img{
     width: 100%;
     transition: 500ms;
     position: relative;
 }
-.deck_of_cards img:hover{
+#deck_of_cards img:hover{
     transform: translatey(-20%);
 }
 
@@ -247,14 +247,20 @@ h1{
 
 #finish_message{
     background-color: var(--lightYealow);
-    padding: 3% 5%;
+    margin-top: 20px;
+    padding: 2% 3%;
     border-radius: 20px;
     display: none;
+    line-height: 1.3rem;
+    font-size: 0.8rem;
 }
 
 .card_keyword{
     text-align: left;
     margin-bottom: 20px;
+}
+.card_keyword h3,p{
+    margin-bottom: 10px;
 }
 
 .socical_icon{
