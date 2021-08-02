@@ -35,7 +35,7 @@ sendBtn.addEventListener('click',()=>{
     submitData();
     document.getElementById('text_message').style.display ="none";
     document.getElementById('deck_of_cards').style.display ="none";
-    
+    sendBtn.disable = true;
     finish_message.style.display = "unset"
 })
 
